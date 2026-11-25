@@ -20,9 +20,8 @@ html, body, #root {
     filter: brightness(0.7) contrast(1.05) !important;
 }
 
-.backgroundContainer,
 .backgroundContainer.withBackdrop {
-    background: linear-gradient(to bottom, rgba(20, 20, 20, 0.25) 0%, rgba(20, 20, 20, 0.85) 55%, #141414 100%) !important;
+
 }
 
 /* --- 2. TOP HEADER, LOGO & CENTERED PILL NAVIGATION --- */
