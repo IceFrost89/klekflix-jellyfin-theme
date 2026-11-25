@@ -1,0 +1,342 @@
+/* =========================================================
+   KLEKFLIX NETFLIX-STYLE THEME (STREAMLINED)
+   ========================================================= */
+
+/* --- 1. THEME VARIABLES & BACKGROUNDS --- */
+:root {
+    --mui-palette-primary-main: #E50914 !important;
+    --mui-palette-primary-dark: #b80710 !important;
+    --mui-palette-primary-light: #f40612 !important;
+    --mui-palette-background-default: #141414 !important;
+    --mui-palette-background-paper: #181818 !important;
+    --theme-primary-color: #E50914 !important;
+}
+
+html, body, #root {
+    background-color: #141414 !important;
+}
+
+.backdropImage {
+    filter: brightness(0.7) contrast(1.05) !important;
+}
+
+.backgroundContainer,
+.backgroundContainer.withBackdrop {
+    background: linear-gradient(to bottom, rgba(20, 20, 20, 0.25) 0%, rgba(20, 20, 20, 0.85) 55%, #141414 100%) !important;
+}
+
+/* --- 2. TOP HEADER, LOGO & CENTERED PILL NAVIGATION --- */
+header.MuiAppBar-root {
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.94) 0%, rgba(0, 0, 0, 0.72) 55%, rgba(0, 0, 0, 0) 100%) !important;
+    box-shadow: none !important;
+    border-bottom: none !important;
+}
+
+header.MuiAppBar-root .MuiToolbar-root,
+header.MuiAppBar-root .MuiBox-root,
+header.MuiAppBar-root .MuiStack-root {
+    background-color: transparent !important;
+    box-shadow: none !important;
+}
+
+header .MuiStack-root {
+    position: static !important;
+    transform: none !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+}
+
+/* Custom Klekflix Logo on Left */
+header .MuiStack-root > a:first-of-type > *,
+header .MuiStack-root > *:first-child > a > *,
+header .MuiStack-root > *:not(:first-child) svg {
+    display: none !important;
+}
+
+header.MuiAppBar-root .MuiStack-root > a:first-of-type,
+header.MuiAppBar-root .MuiStack-root > *:first-child > a {
+    display: inline-block !important;
+    width: 210px !important;
+    height: 60px !important;
+    margin-right: auto !important;
+    background: transparent url("https://i.postimg.cc/8C3kWZBm/Klekflix-logo.png") left center / contain no-repeat !important;
+    font-size: 0 !important;
+}
+
+header .MuiStack-root > *:last-child {
+    margin-right: auto !important;
+}
+
+/* Centered Category Links (Round Pill Hitboxes) */
+header .MuiStack-root > *:not(:first-child) a,
+header .MuiStack-root > *:not(:first-child) button {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 1.12rem !important;
+    font-weight: 600 !important;
+    padding: 8px 16px !important;
+    border-radius: 9999px !important;
+    overflow: hidden !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+    transition: color 0.12s ease, background-color 0.12s ease, transform 0.12s ease !important;
+    will-change: transform, color, background-color !important;
+}
+
+header .MuiStack-root > *:not(:first-child) a:hover,
+header .MuiStack-root > *:not(:first-child) button:hover {
+    color: #ffffff !important;
+    background-color: rgba(255, 255, 255, 0.12) !important;
+    transform: translateY(-2px) !important;
+}
+
+header .MuiStack-root > *:not(:first-child) a[aria-current="page"],
+header .MuiStack-root > *:not(:first-child) a[aria-current="page"] *,
+header .MuiStack-root > *:not(:first-child) .active,
+header .MuiStack-root > *:not(:first-child) .active *,
+header .MuiStack-root > *:not(:first-child) .Mui-selected,
+header .MuiStack-root > *:not(:first-child) .Mui-selected * {
+    color: #E50914 !important;
+    font-weight: 700 !important;
+}
+
+header .MuiStack-root > *:not(:first-child) a[aria-current="page"],
+header .MuiStack-root > *:not(:first-child) .active,
+header .MuiStack-root > *:not(:first-child) .Mui-selected {
+    background-color: rgba(229, 9, 20, 0.16) !important;
+    box-shadow: inset 0 0 0 1.5px rgba(229, 9, 20, 0.55) !important;
+}
+
+header.MuiAppBar-root .MuiIconButton-root {
+    border-radius: 50% !important;
+    overflow: hidden !important;
+}
+
+/* --- 3. NETFLIX-RED BUTTONS, PROGRESS BARS & BADGES --- */
+.MuiButton-contained,
+.MuiButton-root[color="primary"],
+.MuiFab-root,
+button[class*="play" i],
+.btnPlay,
+.MuiCard-root button:has(svg[data-testid="PlayArrowIcon"]),
+div[class*="card"] button:has(svg[data-testid="PlayArrowIcon"]),
+.cardOverlayFab-primary {
+    background-color: #E50914 !important;
+    color: #ffffff !important;
+    border: none !important;
+    font-weight: 600 !important;
+    transition: background-color 0.2s ease, transform 0.2s ease !important;
+}
+
+.MuiButton-contained,
+.MuiButton-root[color="primary"],
+button[class*="play" i],
+.btnPlay {
+    border-radius: 4px !important;
+}
+
+.MuiCard-root button:has(svg[data-testid="PlayArrowIcon"]),
+div[class*="card"] button:has(svg[data-testid="PlayArrowIcon"]),
+.cardOverlayFab-primary {
+    box-shadow: 0 4px 14px rgba(229, 9, 20, 0.6) !important;
+}
+
+.MuiButton-contained:hover,
+.MuiFab-root:hover,
+button[class*="play" i]:hover,
+.btnPlay:hover {
+    background-color: #f40612 !important;
+    transform: scale(1.04) !important;
+}
+
+.MuiCard-root button:has(svg[data-testid="PlayArrowIcon"]):hover,
+div[class*="card"] button:has(svg[data-testid="PlayArrowIcon"]):hover,
+.cardOverlayFab-primary:hover {
+    background-color: #f40612 !important;
+    transform: scale(1.1) !important;
+}
+
+.MuiLinearProgress-bar,
+.MuiLinearProgress-barColorPrimary,
+.MuiSlider-track,
+.MuiSlider-thumb,
+.itemProgressBarForeground,
+.MuiBadge-badge,
+.MuiChip-colorPrimary,
+.MuiTabs-indicator,
+.countIndicator {
+    background-color: #E50914 !important;
+    color: #ffffff !important;
+    font-weight: 700 !important;
+}
+
+.MuiLinearProgress-root {
+    background-color: rgba(255, 255, 255, 0.2) !important;
+}
+
+/* --- 4. ZERO-CLIP POSTER CARDS & CLEAN CORNERS --- */
+.MuiCard-root,
+.MuiPaper-root[class*="card"],
+div[class*="cardBox"],
+a[class*="card"] {
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    background-color: #181818 !important;
+    border: none !important;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5) !important;
+    transition: box-shadow 0.25s ease !important;
+}
+
+.MuiCard-root:hover,
+.MuiPaper-root[class*="card"]:hover,
+div[class*="cardBox"]:hover,
+a[class*="card"]:hover {
+    transform: none !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.9) !important;
+}
+
+.MuiCard-root > div:first-child,
+div[class*="cardBox"] > div:first-child,
+.cardOverlayContainer {
+    border-radius: 8px 8px 0 0 !important;
+    overflow: hidden !important;
+    background-color: transparent !important;
+}
+
+.MuiCard-root img,
+.MuiPaper-root[class*="card"] img,
+div[class*="cardBox"] img,
+a[class*="card"] img,
+.cardImageContainer {
+    border-radius: 0 !important;
+    transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1) !important;
+    transform-origin: center center !important;
+}
+
+.MuiCard-root:hover img,
+.MuiPaper-root[class*="card"]:hover img,
+div[class*="cardBox"]:hover img,
+a[class*="card"]:hover img,
+.cardBox:hover .cardImageContainer {
+    transform: scale(1.06) !important;
+}
+
+/* --- 5. ROW TITLES, SPACING & SIDE SCROLL ARROWS --- */
+.verticalSection {
+    position: relative !important;
+}
+
+.verticalSection .sectionTitleContainer,
+.emby-scrollbuttons {
+    position: static !important;
+}
+
+.sectionTitleContainer {
+    padding-left: 3.3% !important;
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+.sectionTitle,
+.sectionTitleTextButton,
+.sectionTitleTextButton *,
+.sectionTitleContainer h2,
+.sectionTitleContainer a {
+    font-weight: 800 !important;
+    letter-spacing: 0.3px !important;
+    color: #ffffff !important;
+}
+
+.sectionTitleTextButton:hover,
+.sectionTitleTextButton:hover * {
+    color: #E50914 !important;
+}
+
+.itemsContainer,
+.emby-scroller,
+div[class*="itemsContainer"],
+.MuiGrid-container {
+    margin-top: -18px !important;
+    padding-top: 0 !important;
+}
+
+button.emby-scrollbuttons-button[data-direction="left"],
+button.emby-scrollbuttons-button[data-direction="right"] {
+    position: absolute !important;
+    top: 46px !important;
+    height: calc(100% - 54px) !important;
+    width: 48px !important;
+    border-radius: 6px !important;
+    background: rgba(20, 20, 20, 0.75) !important;
+    backdrop-filter: blur(6px) !important;
+    color: #ffffff !important;
+    z-index: 30 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    opacity: 0 !important;
+    transition: opacity 0.2s ease, background-color 0.2s ease, transform 0.2s ease !important;
+}
+
+button.emby-scrollbuttons-button[data-direction="left"] { left: 6px !important; }
+button.emby-scrollbuttons-button[data-direction="right"] { right: 6px !important; }
+
+.verticalSection:hover button.emby-scrollbuttons-button:not([disabled]) {
+    opacity: 1 !important;
+}
+
+button.emby-scrollbuttons-button:not([disabled]):hover {
+    background: rgba(229, 9, 20, 0.88) !important;
+    transform: scale(1.03) !important;
+}
+
+button.emby-scrollbuttons-button[disabled] {
+    opacity: 0 !important;
+    pointer-events: none !important;
+}
+
+
+
+
+
+/* === EMPTY FAVORITES PAGE ("NOTHING HERE." ONLY) === */
+#favoritesTab:not(:has(.cardBox)):not(:has(.MuiCard-root)):not(:has(.itemsContainer > *)),
+div[data-url*="favorites" i]:not(:has(.cardBox)):not(:has(.MuiCard-root)):not(:has(.itemsContainer > *)) {
+    position: relative !important;
+    min-height: 75vh !important;
+}
+
+/* Line 1: Large bold "Nothing here." heading */
+#favoritesTab:not(:has(.cardBox)):not(:has(.MuiCard-root)):not(:has(.itemsContainer > *))::before,
+div[data-url*="favorites" i]:not(:has(.cardBox)):not(:has(.MuiCard-root)):not(:has(.itemsContainer > *))::before {
+    content: "Nothing here." !important;
+    position: absolute !important;
+    top: 23% !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    text-align: center !important;
+    color: #ffffff !important;
+    font-size: 32px !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    pointer-events: none !important;
+}
+
+/* Line 2: Small subtitle right underneath */
+#favoritesTab:not(:has(.cardBox)):not(:has(.MuiCard-root)):not(:has(.itemsContainer > *))::after,
+div[data-url*="favorites" i]:not(:has(.cardBox)):not(:has(.MuiCard-root)):not(:has(.itemsContainer > *))::after {
+    content: "No items are currently available." !important;
+    position: absolute !important;
+    top: calc(23% + 32px) !important;
+    left: 50% !important;
+    transform: translate(-50%, -50%) !important;
+    text-align: center !important;
+    color: rgba(255, 255, 255, 0.72) !important;
+    font-size: 16px !important;
+    font-weight: 400 !important;
+    line-height: 1.4 !important;
+    pointer-events: none !important;
+}
+
+
+
